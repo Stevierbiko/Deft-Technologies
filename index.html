@@ -70,8 +70,8 @@
                     <a href="tel:+254 728 281 044"><span>Call US:</span>+254 728 281 044</a>
                 </div>
                 <div clas2s="clear"></div>
-                <!--clear-2-2>
-            </div>12
+                <!--clear-2-2--->
+            </div>
             <!--top-bar-->
         </div>
     </header>
@@ -103,7 +103,7 @@
         <a href="tel:+254 728 281 044">+254 728 281 044</a>
     </div>
 
-    <section class="header-bg-parent"31>
+    <section class="header-bg-parent" 31>
         <div class="header-col1">
             <h5>Welcome to Deft Technologies</h5>
             <h2>Digital Products</h2>
@@ -122,7 +122,7 @@
         <!--header-col2-->
         <div class="clear"></div>
         <!--clear-->
-        <img class="hedaer-bg-par-img" src="images/corner-img.png" class="img-responsive" alt="corner" />
+        <img class="header-bg-par-img" src="images/corner-img.png" class="img-responsive" alt="corner" />
     </section>
     <!--header-bg-parent-->
 
@@ -159,7 +159,7 @@
                     <p>A software oriented to educational centres that allows the control of the academic, economic,
                         administrative and methodological management. It adapts to kindergartens, schools, universities
                         and business schools.</p>
-                    <!--                </div>feature-col-->
+                    <!--                feature-col-->
                 </div>
                 <!--feature-col-->
                 <div class="feature-col">
@@ -272,7 +272,7 @@
                 <div class="progress-bar-col">
                     <div class="col-sm-4">
                         <div class="progressbar">
-                            <div class="second circle" data-percent="77">
+                            <div class="second circle" data-percent="100">
                                 <strong></strong>
 
                             </div>
@@ -281,13 +281,37 @@
 
                     <div class="col-sm-4">
                         <div class="progressbar">
-                            <div class="second circle" data-percent="55">
+                            <div class="second circle" data-percent="100">
                                 <strong></strong>
 
                             </div>
                         </div>
                     </div>
 
+                    <div class="col-sm-4">
+                        <div class="progressbar">
+                            <div class="second circle" data-percent="100">
+                                <strong></strong>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="progressbar">
+                            <div class="second circle" data-percent="100">
+                                <strong></strong>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="progressbar">
+                            <div class="second circle" data-percent="100">
+                                <strong></strong>
+
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-sm-4">
                         <div class="progressbar">
                             <div class="second circle" data-percent="100">
@@ -382,7 +406,8 @@
                         <div class="faq-img-info">
                             <i class="fa fa-lightbulb-o"></i>
                             <h2>We Would Like To Hear From You!</h2>
-                            <p>Talk to our team about any questions you have about Microsoft enterprise solutions and we'll get back to you right away.</p>
+                            <p>Talk to our team about any questions you have about Microsoft enterprise solutions and
+                                we'll get back to you right away.</p>
                             <a href="#contact">Get In Touch <i class="fa fa-long-arrow-right"></i></a>
                         </div>
                         <!--faq-img-info-->
@@ -569,14 +594,14 @@
             <div class="container">
                 <div class="form-par">
                     <h2>Get IN Touch With US !</h2>
-                    <form>
-                        <input type="text" placeholder="Your Name" class="f-name form-com" required />
-                        <input type="email" placeholder="Email" class="em-input form-com" required />
+                    <form onsubmit="sendEmail(); reset(); return false;">
+                        <input type="text" placeholder="Your Name" id="name" class="f-name form-com" required />
+                        <input type="email" placeholder="Email" id="email" class="em-input form-com" required />
                         <input type="tel" id="phone" name="phone" class="phone-input form-com" placeholder="Mobile No"
                             required>
-                        <input type="text" placeholder="Website" class="web-input form-com" />
-                        <textarea name="" class="form-com" placeholder="message" id="message" cols="30" rows="10"
-                            required></textarea>
+                        <input type="text" id="website" placeholder="Website" class="web-input form-com" />
+                        <textarea name="" class="form-com" placeholder="How can we help you?" id="message" cols="30"
+                            rows="10" required></textarea>
                         <input type="submit" value="submit" class="submit-btn" />
                     </form>
                 </div>
@@ -609,9 +634,9 @@
                     <ul>
                         <li>Home</li>
                         <li>About Us</li>
-                        <li>Services</li>
-                        <li>Portfolio</li>
-                        <li>Blog</li>
+                        <li>Solutions</li>
+                        <li>Products</li>
+                        <li>Policy Statements</li>
                         <li>Contact Us</li>
                     </ul>
                 </div>
@@ -630,7 +655,7 @@
                 <p class="copyright-footer">&copy; 2023 All Rights Reserved!</p>
             </div>
         </footer>
-
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <Script src="js/jquery-ui.min.js"></Script>
         <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.2/dist/circle-progress.js"></script>
@@ -643,6 +668,23 @@
             $(".menu").slideToggle(400);
         });
     });
+    function sendEmail() {
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "stevierbiko@gmail.com",
+            Password: "1995omess",
+            To: 'info@deftech.co.ke',
+            From: document.getElementById("email").value,
+            Subject: "Test Subject Inquiry",
+            Body: "Name: " + document.getElementById("name").value
+                   + "<br> Email: "  + document.getElementById("email").value
+                   + "<br> Phone no: "  + document.getElementById("phone").value
+                   + "<br> Website: "  + document.getElementById("website").value
+                   + "<br> Message: "  + document.getElementById("message").value
+        }).then(
+            message => alert("Message sent Successfully")
+        );
+    }
 
 </script>
 

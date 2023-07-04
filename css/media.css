@@ -93,7 +93,7 @@
         font-size: 12px;
     }
 
-    .hedaer-bg-par-img {
+    .header-bg-par-img {
         display: none;
     }
 
@@ -103,7 +103,7 @@
         padding: 0 60px;
     }
 
-    .faeture-col-par {
+    .feature-col-par {
         padding: 30px 10px;
         margin-top: 20px;
         background-color: #ffcfcf;
@@ -118,7 +118,7 @@
         box-shadow: 2px 2px 10px #fefefe;
         border-radius: 13px;
         transition: all 0.5s ease;
-        height: 265px;
+        /* height: 265px; */
         text-align: center;
         margin-bottom: 20px;
     }
